@@ -89,4 +89,7 @@ watch(postal, (v) => {
 .kpi .value { font: 700 1.2rem/1.2 system-ui, sans-serif; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; }
 .chip { background: #eef5ff; border: 1px solid #d6e6ff; color: #0b3a63; padding: 6px 10px; border-radius: 999px; }
+/* added margin between stacked cards in this view */
+section.card { margin-top: 12px; }
+@media (min-width: 768px) { section.card { margin-top: 16px; } }
 </style>
