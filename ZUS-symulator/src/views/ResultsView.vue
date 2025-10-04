@@ -18,7 +18,7 @@ function pln(n?: number) {
 
     <div v-if="!results">
       <p>Brak wyników do wyświetlenia. Wypełnij formularz, aby zobaczyć prognozę.</p>
-      <RouterLink class="btn" to="/simulate">Przejdź do formularza</RouterLink>
+      <RouterLink class="button" to="/simulate">Przejdź do formularza</RouterLink>
     </div>
 
     <div v-else class="grid">
@@ -95,7 +95,7 @@ function pln(n?: number) {
       </section>
 
       <div class="actions">
-        <RouterLink class="btn" to="/simulate">Wróć do formularza</RouterLink>
+        <RouterLink class="button" to="/simulate">Wróć do formularza</RouterLink>
       </div>
     </div>
   </main>
@@ -104,8 +104,6 @@ function pln(n?: number) {
 <style scoped>
 .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 h1 { color: var(--zus-navy, #00416e); margin-bottom: 16px; }
-.btn { display: inline-block; padding: 10px 16px; background: var(--zus-blue, #3f84d2); color: #fff; border-radius: 8px; text-decoration: none; }
-.btn:focus { outline: 2px solid var(--zus-blue, #3f84d2); }
 .grid { display: grid; gap: 16px; }
 .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
 .highlight { border-color: var(--zus-blue, #3f84d2); box-shadow: 0 0 0 3px rgba(63,132,210,0.1); }
