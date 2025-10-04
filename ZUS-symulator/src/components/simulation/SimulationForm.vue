@@ -246,7 +246,11 @@ const onSubmit = handleSubmit((vals) => {
   cursor: pointer;
   user-select: none;
 }
-.pill-group .pill input { appearance: none; width: 10px; height: 10px; border-radius: 999px; box-shadow: inset 0 0 0 2px #d1d5db; margin: 0; }
+.pill-group .pill input { appearance: none; width: 14px; height: 14px; border-radius: 999px; box-shadow: inset 0 0 0 2px #d1d5db; margin: 0; background: #fff; transition: box-shadow 150ms ease, transform 120ms ease; }
+.pill-group .pill input:checked { box-shadow: inset 0 0 0 5px var(--zus-blue); }
+.pill-group .pill input:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(63,132,210,0.25), inset 0 0 0 5px var(--zus-blue); }
+.pill-group .pill:hover { transform: translateY(-1px); transition: transform 120ms ease, background 120ms ease; }
+.pill-group .pill:focus-within { outline: 3px solid rgba(63,132,210,0.20); outline-offset: 2px; }
 .pill-group .pill:has(input:checked) {
   background: var(--zus-blue-light);
   border-color: var(--zus-blue);
@@ -259,6 +263,12 @@ const onSubmit = handleSubmit((vals) => {
   border: 1px solid #d1d5db;
   border-radius: 8px;
   overflow: hidden;
+  min-height: var(--control-height);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.affix-input:focus-within {
+  border-color: var(--zus-blue);
+  box-shadow: 0 0 0 3px rgba(63,132,210,0.20);
 }
 .affix-input .prefix {
   padding: 10px 12px;

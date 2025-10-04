@@ -16,6 +16,7 @@
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
   --shadow-md: 0 6px 16px rgba(0,0,0,0.08);
   --border: 1px solid #e5e7eb;
+  --control-height: 44px;
 }
 
 * { box-sizing: border-box; }
@@ -48,6 +49,7 @@ h1, h2, h3, h4 { color: var(--zus-navy); font-weight: 700; letter-spacing: -0.01
   border: var(--border);
   box-shadow: var(--shadow-sm);
   padding: 16px;
+  animation: floatIn 380ms ease both;
 }
 
 /* Buttons (works for both <button> and <a>) */
@@ -87,6 +89,8 @@ input, select {
   border: 1px solid #d1d5db; /* gray-300 */
   background: white;
   transition: border-color 120ms ease, box-shadow 120ms ease;
+  min-height: var(--control-height);
+  line-height: 1.2;
 }
 input:focus, select:focus {
   outline: none;
@@ -136,3 +140,18 @@ nav a.router-link-active { background: var(--zus-blue-light); color: #0b3a63; }
 .table tbody tr:hover { background: #fafafa; }
 
 .chart-container { position: relative; width: 100%; height: 320px; }
+
+
+/* Native control color fallback */
+input[type="checkbox"], input[type="radio"] { accent-color: var(--zus-blue); }
+
+/* Animations */
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button, a.button { transition: none; }
+  .card { animation: none; }
+}
