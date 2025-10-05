@@ -69,9 +69,9 @@ onMounted(() => {
     <div style="display:flex; justify-content: space-between; align-items: center; margin-top: 8px">
       <span>Wiersze: {{ admin.totalRows }}</span>
       <div style="display:flex; gap:4px; align-items: center">
-        <button class="button" :disabled="admin.filters.page === 1" @click="admin.filters.page = Math.max(1, admin.filters.page-1)">Prev</button>
+        <button class="button" :disabled="admin.filters.page === 1" @click="admin.filters.page = Math.max(1, admin.filters.page-1)">Poprzednie</button>
         <span>Strona {{ admin.filters.page }}</span>
-        <button class="button" :disabled="admin.filters.page * admin.filters.pageSize >= admin.totalRows" @click="admin.filters.page = admin.filters.page + 1">Next</button>
+        <button class="button" :disabled="admin.filters.page * admin.filters.pageSize >= admin.totalRows" @click="admin.filters.page = admin.filters.page + 1">Następne</button>
       </div>
     </div>
   </div>
